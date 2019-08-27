@@ -1,0 +1,175 @@
+<html>
+<head>
+	<title>registration from</title>
+<style>
+input{
+background-color:white;
+height:30px;
+color:purple;
+border-radius:30px;
+
+}
+
+
+</style>
+<body bgcolor="tomato">
+<script type="text/javascript">
+
+function empty(){
+var a=document.getElementById('t1').value;
+var b=document.getElementById('t2').value;
+var c=document.getElementById('inp1').value;
+var d=document.getElementById('p').value;
+var e=document.getElementById('cp').value;
+var f=document.getElementById('t3').value;
+var g=document.getElementById('t5').value;
+if(a==""){
+alert('plaese fill all field');
+}
+else{
+document.getElementById('f').submit;
+}
+
+
+}
+
+function check(){
+var a=document.getElementById('inp1').value.length;
+var b=document.getElementById('p').value;
+var c=document.getElementById('cp').value;
+if(a<=6){
+document.getElementById('p1').style.visibility='visible';
+}
+else if(a>6){
+document.getElementById('p1').style.visibility='hidden';
+}
+if(c!=b){
+document.getElementById('cp1').style.visibility='visible';
+}
+else if(c==b){
+document.getElementById('cp1').style.visibility='hidden';
+}
+}
+function showprovince(){
+var a=document.getElementById('province');
+var b=a.options[a.selectedIndex].value;
+		if(b=='sindh'){
+var c=document.getElementById('sinp').style.visibility='visible';
+if(c=='karachi'){
+}
+document.getElementById('pup').style.visibility='hidden';
+document.getElementById('blop').style.visibility='hidden';
+document.getElementById('srp').style.visibility='hidden';
+		}
+		else if(b=='punjab'){
+document.getElementById('pup').style.visibility='visible';
+document.getElementById('sinp').style.visibility='hidden';document.getElementById('blop').style.visibility='hidden';
+document.getElementById('srp').style.visibility='hidden';
+		}
+		else if(b=='balochistan'){
+document.getElementById('blop').style.visibility='visible';
+document.getElementById('sinp').style.visibility='hidden';
+document.getElementById('pup').style.visibility='hidden';
+document.getElementById('srp').style.visibility='hidden';
+		}
+else if(b=='sarhad'){
+document.getElementById('srp').style.visibility='visible';
+document.getElementById('sinp').style.visibility='hidden';
+document.getElementById('pup').style.visibility='hidden';
+document.getElementById('blop').style.visibility='hidden';
+		}
+	}
+
+
+</script>
+</head>
+<body bgcolor="tomato">
+<center>
+<h1>Registration Form</h1>
+<fieldset>
+<legend>MY Form</legend>
+<form action="form.php" method="get" id='f'>
+<label>Name:</label>
+<input type="text" name="fname" id='t1' ><br><br>
+<label>Last Name:</label>
+<input type="text" name="lname" ><br><br>
+<label>Username:</label>
+<input type="text" name="uname" id="inp1" onkeyup="check()">
+<span style="color:red;visibility:hidden" id="p1">length is too short </span>
+<br><br>
+<label>Password:</label>
+<input type="password" name="password" required id="p"><br><br>
+<label>Confirm password:</label>
+<input type="password" name="c_password" required id="cp" onkeyup="check()" >
+<span style="color:red; visibility:hidden" id="cp1">password does not  match</span><br><br>
+<label>Gender:</label>
+<input type="radio" name="gender" required value="male" id='t2'>male
+<input type="radio" name="gender" required value="female">Female
+<input type="radio" name="gender" required value="Others">Others
+<br><br>
+<label>Date Of Birth:</label>
+<input type="date" name="date" id='t3'><br><br>
+<label>Email:</label>
+<input type="email" name="email"id='t4'><br><br>
+<label>Cell</label>
+<input type="number" name="cell" id='t5'><br><br>
+<div>
+	<label>select Province</label>
+<select name="province" onchange="return showprovince();" id="province">
+ <option  value=" "></option>
+<option  value="sindh">sindh</option>
+<option value="punjab">punjab</option>
+<option  value="balochistan">Balochistan</option>
+<option  value="sarhad">sarhad</option>
+</select>
+</div>
+
+<div  id="sinp" style="visibility:hidden;">
+<label>select City</label>
+<select name="city">
+<option  value="karachi">karachi</option>
+<option  value="shahdadpur">shadadpur</option>
+<option value="hyderabad">hyderabad</option>
+<option   value="thatta">thatta</option>
+<option  value="sanghar">sanghar</option>
+</select>
+</div>
+<div  id="pup" style="visibility:hidden;">
+<label>select city</label>
+<select name="city">
+<option value="islamabad">islamabad</option>
+<option value="multan">multan</option>
+<option value="faislabad">faislabad</option>
+</select>
+</div>
+
+<div  id="blop" style="visibility:hidden;">
+<label>select city</label>
+<select name="city">
+<option value="quetta">quetta</option>
+<option value="turbat">turbat</option>
+<option value="chaman">chaman</option>
+<option value="naushki">naushki</option>
+</select>
+</div>
+<div  id="srp" style="visibility:hidden;">
+<label>select city</label>
+<select name="city">
+<option value="Abottabad">Abottabad</option>
+<option value="bannu">bannu</option>
+<option value="haripur">haripur</option>
+<option value="dara ismail khan">dara ismail khan</option>
+</select>
+</div>
+
+<label>Languages:</label>
+<input type="checkbox" name="language[]" value="english">english
+<input type="checkbox" name="language[]" value="urdu">urdu
+<input type="checkbox" name="language[]" value="sindhi">sindhi
+<br>
+<button name="submit" onclick="empty()">submit</button>
+</form>
+</center>
+<body>
+
+</html>

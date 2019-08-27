@@ -1,0 +1,43 @@
+*{
+	font-family:forte;
+	
+}
+body{
+background-image:url('images/purple.jpg');
+
+}
+h1{
+	text-align:center;
+	font-family:forte;
+	color:purple;
+	Text-decoration:underline;
+
+	
+}
+.t2{
+	
+	border:2px solid purple;
+	width:500px;
+	background-color:violet;
+	
+}
+th{
+border:2px solid white;	
+}
+td{
+	border:2px solid white
+}
+.slid1{
+	background-color:purple;
+	width:50%;
+	border-radius:20px;
+	opacity:0.7;
+	color:white;	
+	
+}
+input{
+	border-radius:20px;
+	width:30%;
+	height:50px;
+	background-color:white;
+}
